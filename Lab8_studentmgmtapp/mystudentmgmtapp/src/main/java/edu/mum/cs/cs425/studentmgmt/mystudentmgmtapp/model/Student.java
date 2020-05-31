@@ -14,12 +14,12 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long studentid;
-    @NotBlank
+    @NotBlank(message = "studentNumber is required")
     private String  studentNumber ;
-    @NotBlank
+    @NotBlank(message = "firstName is required")
     private  String firstName ;
     private  String middleName;
-    @NotBlank
+    @NotBlank(message = "lastName is required")
     private String lastName;
     private Double cgpa;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
