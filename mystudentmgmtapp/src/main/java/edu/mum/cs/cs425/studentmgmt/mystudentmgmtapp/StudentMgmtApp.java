@@ -39,6 +39,14 @@ public class StudentMgmtApp implements CommandLineRunner {
        r1.setStudent(students1);
        r1.addStudent(students1);
        saveClassRoom(r1);
+
+
+
+
+       r1.setStudent(students1);
+       r1.addStudent(students1);
+       saveClassRoom(r1);
+
    }
 
     public static void main(String[] args) {
