@@ -40,6 +40,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">First Name</th>
+            <th scope="col">MiddleName</th>
             <th scope="col">LastName</th>
             <th scope="col">enrollmentDate</th>
             <th scope="col">is_international</th>
@@ -53,6 +54,7 @@
         <tr th:each="students, iterStat : ${students}" th:onclick="@{document.location='#'}">
             <th scope="row" th:text="${iterStat.count}+'.'">#</th>
             <td th:text="${students.getFirstName()}"></td>
+            <td th:text="${students.getMiddleName()}"></td>
             <td th:text="${students.getLastName()}"></td>
             <td th:text="${students.getEnrollmentDate()}"></td>
             <td th:text="${students.getInternational()}"></td>
@@ -79,11 +81,12 @@
             <li class="page-item disabled">
                 <a class="page-link" href="#">Pages: </a>
             </li>
-<!--            <li th:each="i : ${#numbers.sequence(1, students.totalPages)}"-->
-<!--                th:class="${currentPageNo}==${i-1}?'page-item active':'page-item'">-->
-<!--                <a th:href="@{/eregistrar/student/list(pageno=${i-1})}"-->
-<!--                   th:text="${i}" class = "page-link"></a>-->
-<!--            </li>-->
+            <li th:each="i : ${#numbers.sequence(1, students.totalPages)}"
+                th:class="${currentPageNo}==${i-1}?'page-item active':'page-item'">
+                <a th:href="@{/eregistrar/student/list(pageno=${i-1})}"
+                   th:text="${i}" class = "page-link"></a>
+            </li>
+
         </ul>
     </div>
 </div>

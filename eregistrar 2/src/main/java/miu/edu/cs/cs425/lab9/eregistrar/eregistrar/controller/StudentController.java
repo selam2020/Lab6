@@ -3,6 +3,7 @@ package miu.edu.cs.cs425.lab9.eregistrar.eregistrar.controller;
 import miu.edu.cs.cs425.lab9.eregistrar.eregistrar.model.Student;
 import miu.edu.cs.cs425.lab9.eregistrar.eregistrar.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,10 +25,13 @@ public class StudentController {
    }
 
     @GetMapping(value = {"/eregistrar/student/list"})
-    public ModelAndView listBooks(@RequestParam(defaultValue = "0") int pageno) {
+    public ModelAndView listStudent(@RequestParam(defaultValue = "0") int pageno) {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("students", studentService.getAllStudentsPaged(pageno));
+        Page<Student> students=studentService.getAllStudentsPaged(pageno);
+        modelAndView.addObject("students",students);
         modelAndView.addObject("currentPageNo", pageno);
+        modelAndView.addObject("studentsCount",students.getTotalElements());
+
         modelAndView.setViewName("student/list");
         return modelAndView;
     }

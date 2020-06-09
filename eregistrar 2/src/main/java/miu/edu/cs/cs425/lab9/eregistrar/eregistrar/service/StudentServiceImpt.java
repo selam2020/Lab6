@@ -41,7 +41,7 @@ public class StudentServiceImpt  implements StudentService {
 
     @Override
     public Page<Student> getAllStudentsPaged(int pageNo) {
-        return studentRepository.findAll(PageRequest.of(pageNo, 10, Sort.by("firstName")));
+        return studentRepository.findAll(PageRequest.of(pageNo, 2, Sort.by("firstName")));
     }
 
     @Override

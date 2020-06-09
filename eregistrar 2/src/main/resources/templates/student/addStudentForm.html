@@ -54,15 +54,15 @@
 
                 </div>
 
-            </div>
-            <div class="row">
+                <!--            </div>-->
+                <!--         <div class="row">-->
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
                         <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"
                               class="alert alert-danger"></span>
                         <input id="firstName" name="firstName" type="text" class="form-control"
-                               th:value="${student.firstName}"required="firstName">
+                               th:value="${student.firstName}">
                     </div>
 
                 </div>
@@ -78,71 +78,64 @@
                                th:value="${student.middleName}">
                     </div>
                 </div>
-            </div>
-            <div class="row">
+                <!--            </div>-->
+                <!--            <div class="row">-->
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
                         <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
                               class="alert alert-danger"></span>
-                        <input id="lastName" name="lastName" type="text" class="form-control" th:value="${student.lastName} "required="lastName">
+                        <input id="lastName" name="lastName" type="text" class="form-control" th:value="${student.lastName}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="enrollmentDate">Enrollment Date</label>
+                        <span th:if="${#fields.hasErrors('enrollmentDate')}" th:errors="*{enrollmentDate}"
+                              class="alert alert-danger"></span>
+                        <input id="enrollmentDate" name="enrollmentDate" type="date" class="form-control"
+                               th:value="${student.enrollmentDate}">
                     </div>
                 </div>
 
-
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="cgpa">cgpa</label>
+                        <span th:if="${#fields.hasErrors('cgpa')}" th:errors="*{cgpa}"
+                              class="alert alert-danger"></span>
+                        <input id="cgpa" name="cgpa" type="number" class="form-control" th:value="${student.cgpa}">
+                    </div>
+                </div>
+                <!--            <div class="col-md-6">-->
+                <!--                <div class="form-group">-->
+                <!--                    <label for="cgpa">cgpa</label>-->
+                <!--                    <span th:if="${#fields.hasErrors('cgpa')}" th:errors="*{cgpa}"-->
+                <!--                          class="alert alert-danger"></span>-->
+                <!--                    <input id="cgpa" name="cgpa" type="text" placeholder="0.00"  class="form-control"-->
+                <!--                           th:value="${student.cgpa}">-->
+                <!--                </div>-->
+                <!--            </div>-->
             </div>
-
-
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="enrollmentDate">Enrollment Date</label>
-                    <span th:if="${#fields.hasErrors('enrollmentDate')}" th:errors="*{enrollmentDate}"
-                          class="alert alert-danger"></span>
-                    <input id="enrollmentDate" name="enrollmentDate" type="date" class="form-control"
-                           th:value="${student.enrollmentDate}">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="isInternational">isInternational</label>
+                        <select name="isInternational" id="isInternational" type="text" class="form-control" th:value="${student.isInternational}">
+                            <option selected value="">Select ...</option>
+                            <option value="yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="cgpa">cgpa</label>
-                    <span th:if="${#fields.hasErrors('cgpa')}" th:errors="*{cgpa}"
-                          class="alert alert-danger"></span>
-                    <input id="cgpa" name="cgpa" type="text" placeholder="0.00"  class="form-control"
-                           th:value="${student.cgpa}">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="isInternational">isInternational</label>
-                    <select name="isInternational" id="isInternational" type="text" class="form-control" th:value="${student.isInternational}">
-                        <option selected value="">Select ...</option>
-                        <option value="yes">Yes</option>
-                        <option value="No">No</option>
-                    </select>
-                </div>
-            </div>
-
-<!--            <div class="btn-group">-->
-<!--                <button type="button" class="btn btn-info">Is International</button>-->
-<!--                <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                    <span class="sr-only">Toggle Dropdown</span>-->
-<!--                </button>-->
-<!--                <div class="dropdown-menu">-->
-<!--                    <a class="dropdown-item" href="#"></a>-->
-<!--                    <a class="dropdown-item" href="#">yes</a>-->
-<!--                    <a class="dropdown-item" href="#">No</a>-->
-<!--                    <label for="isInternational">isInternational</label>-->
-<!--                    <span th:if="${#fields.hasErrors('isInternational')}" th:errors="*{isInternational}"-->
-<!--                          class="alert alert-danger"></span>-->
-<!--                           th:value="${student.isInternational}">-->
-
-<!--                                        <div class="dropdown-divider"></div>-->
-<!--                </div>-->
-<!--            </div>-->
             <div style="float:right;">
                 <a href="/eregistrar/student/list" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
-               <button id="btnSubmit" type="submit" class="btn btn-outline-success">Save Student</button>
-<!--                <a href="/student/addstudent" class="btn btn-outline-warning">Save Student</a>&nbsp;&nbsp;&nbsp;-->
+                <button id="btnSubmit" type="submit" class="btn btn-outline-success">Save Student</button>
+                <!--                <a href="/student/addstudent" class="btn btn-outline-warning">Save Student</a>&nbsp;&nbsp;&nbsp;-->
 
 
             </div>
